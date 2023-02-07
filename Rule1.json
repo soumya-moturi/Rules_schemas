@@ -1,0 +1,345 @@
+{
+  "version": 2,
+  "schema": {
+    "title": "",
+    "description": "",
+    "type": "object",
+    "properties": {
+      "a": {
+        "title": "a",
+        "type": "string",
+        "name": "a",
+        "enum": [
+          "c1",
+          "c2"
+        ],
+        "enumNames": [
+          "choice 1",
+          "choice 2"
+        ]
+      }
+    },
+    "required": [],
+    "allOf": [
+      {
+        "if": {
+          "allOf": [
+            {
+              "properties": {
+                "a": {
+                  "const": "c1"
+                }
+              },
+              "required": [
+                "a"
+              ],
+              "__rule_key": "a"
+            },
+            {
+              "anyOf": [
+                {
+                  "properties": {
+                    "b": {
+                      "const": "c1"
+                    }
+                  },
+                  "required": [
+                    "b"
+                  ],
+                  "__rule_key": "b"
+                },
+                {
+                  "properties": {
+                    "c": {
+                      "const": "c1"
+                    }
+                  },
+                  "required": [
+                    "c"
+                  ],
+                  "__rule_key": "c"
+                }
+              ]
+            }
+          ]
+        },
+        "then": {
+          "properties": {
+            "d": {
+              "title": "d",
+              "type": "string",
+              "name": "d",
+              "enum": [
+                "c1",
+                "c2"
+              ],
+              "enumNames": [
+                "choice 1",
+                "choice 2"
+              ]
+            }
+          },
+          "__event_name": "show",
+          "__schema_path": "properties",
+          "__field_name": "d"
+        }
+      },
+      {
+        "if": {
+          "allOf": [
+            {
+              "properties": {
+                "b": {
+                  "const": "c2"
+                }
+              },
+              "required": [
+                "b"
+              ],
+              "__rule_key": "b"
+            }
+          ]
+        },
+        "then": {
+          "properties": {
+            "c": {
+              "title": "c",
+              "type": "string",
+              "name": "c",
+              "enum": [
+                "c1",
+                "c2"
+              ],
+              "enumNames": [
+                "choice 1",
+                "choice 2"
+              ]
+            }
+          },
+          "__event_name": "show",
+          "__schema_path": "properties",
+          "__field_name": "c"
+        }
+      },
+      {
+        "if": {
+          "allOf": [
+            {
+              "properties": {
+                "a": {
+                  "const": "c1"
+                }
+              },
+              "required": [
+                "a"
+              ],
+              "__rule_key": "a"
+            }
+          ]
+        },
+        "then": {
+          "properties": {
+            "b": {
+              "title": "b",
+              "type": "string",
+              "name": "b",
+              "enum": [
+                "c1",
+                "c2"
+              ],
+              "enumNames": [
+                "choice 1",
+                "choice 2"
+              ]
+            }
+          },
+          "__event_name": "show",
+          "__schema_path": "properties",
+          "__field_name": "b"
+        }
+      }
+    ]
+  },
+  "uiSchema": {
+    "a": {
+      "htmlType": "choice",
+      "nav": ""
+    },
+    "b": {
+      "htmlType": "choice",
+      "nav": ""
+    },
+    "c": {
+      "htmlType": "choice",
+      "nav": ""
+    },
+    "d": {
+      "htmlType": "choice",
+      "nav": ""
+    },
+    "ui:order": [
+      "a",
+      "b",
+      "c",
+      "d",
+      "*"
+    ]
+  },
+  "errorMessage": {},
+  "rules": {},
+  "layout": {
+    "fieldLayout": "",
+    "showErrorList": false,
+    "errorListHeading": "",
+    "liveValidate": false
+  },
+  "multiStep": {
+    "showNavs": true,
+    "submitOnEachStep": false,
+    "prevButtonText": "Prev",
+    "nextButtonText": "Next",
+    "breadCrumbTheme": "Legacy"
+  },
+  "commonRules": [],
+  "cloudWidget": {
+    "resumeInfoText": "Join our Talent Community for alerts on the latest job opportunities and updates from Advanced Clinical. We will notify you about relevant positions, and keep you in mind whenever we have the right opportunity for your skillset.",
+    "commonCloudOptions": {},
+    "cloudSpecific": {}
+  },
+  "theme": {
+    "body": {},
+    ".form-playground, .phenom-form-container": {
+      "--primary-color": "#5d6fb1",
+      "--secondary-color": "#5a6872",
+      "--background-color": "#fff"
+    },
+    "form": {
+      "width": "100%"
+    },
+    "layout": {
+      "labelAlignment": "block",
+      "controlGap": "10px"
+    },
+    "label": {
+      "color": "#5a6872",
+      "font-size": "14px",
+      "additional": {}
+    },
+    ".markdown-as-title p, .custom-object .field-description": {
+      "color": "#5d6fb1",
+      "font-size": "22px"
+    },
+    "input.form-control,select.form-control": {
+      "color": "#111010",
+      "font-size": "14px",
+      "border": "1px solid gray",
+      "height": "40px",
+      "width": "100%",
+      "background-color": "transparent"
+    },
+    "textarea.form-control": {
+      "color": "#111010",
+      "font-size": "14px",
+      "border": "1px solid gray",
+      "height": "100px",
+      "width": "100%",
+      "background-color": "transparent"
+    },
+    ".checkbox-control": {
+      "height": "16px",
+      "width": "16px",
+      "margin-right": "10px"
+    },
+    ".help-block": {
+      "color": "#111010",
+      "font-size": "12px"
+    },
+    ".error-msg": {
+      "color": "#f00",
+      "background": "#ffdada",
+      "padding": "10px",
+      "width": "100%"
+    },
+    ".errorHeader": {
+      "color": "#f00",
+      "background": "#ffdada",
+      "font-size": "12px",
+      "font-weight": "Bold",
+      "line-height": "18px"
+    },
+    ".error-detail": {
+      "padding-left": "42.6%",
+      "margin-top": "4px",
+      "margin-bottom": "8px",
+      "list-style": "none"
+    },
+    ".text-danger": {
+      "color": "#fc1d2b",
+      "font-size": "15px"
+    },
+    ".summary-title-link": {
+      "color": "#000000",
+      "font-size": "15px",
+      "font-weight": "Bold",
+      "line-height": "18px"
+    },
+    ".summary-title": {
+      "color": "#000000",
+      "font-size": "15px"
+    },
+    ".summary-value": {
+      "color": "#000000",
+      "font-size": "15px",
+      "font-weight": "Bold",
+      "line-height": "18px",
+      "word-break": "break-all",
+      "opacity": "0.7",
+      "padding": "5px 0 15px 0"
+    },
+    ".summary-label": {
+      "color": "#000000",
+      "opacity": "1"
+    },
+    "button.btn": {
+      "color": "#ffffff",
+      "background": "#0571e9",
+      "font-size": "12px",
+      "border": "1px solid gray",
+      "height": "50px",
+      "float": "left"
+    },
+    ".navigation": {
+      "display": "flex"
+    },
+    "button.btn-navigate": {
+      "color": "#ffffff",
+      "background": "#0571e9",
+      "font-size": "12px",
+      "border": "1px solid #0571e9",
+      "height": "50px",
+      "line-height": "18px"
+    },
+    "button.btn-navigate:hover": {
+      "color": "#0571e9",
+      "background": "#ffffff"
+    },
+    "button.btn-navigate:focus": {
+      "color": "#0571e9",
+      "background": "#ffffff"
+    },
+    "button.btn-prev": {
+      "float": "left !important"
+    },
+    "button.btn-submit, button.btn-next": {
+      "float": "right !important",
+      "margin-left": "auto"
+    },
+    "css": {
+      "main": "form.rjsf {}\n#__description{\n    display:none;\n}\n.form-group label {\n    justify-content: flex-end;\n}\n.checkbox label {\n    display: flex;\n    align-items: center;\n    justify-content: flex-start;\n}\n/* write custom css here */\nfieldset { width: 100%; }\n/* cloud icon css */\n.skydrive,.onedrive,.indeed,.dropbox,.xing {\n    display: block;\n    width: 40px;\n    height: 40px;\n    border-radius: 12%;\n    background-repeat: no-repeat;\n    background-size: cover;\n    background-position: top center;\n    cursor: pointer;\n}\n.skydrive, .onedrive {\n    background-image: url('https://assets.phenompeople.com/CareerConnectResources/q/ADCLUS/en_us/desktop/assets/images/SkyDrive.png');\n}\n.indeed {\n    background-image: url('https://assets.phenompeople.com/CareerConnectResources/pp/RANEUK/en_uk/desktop/assets/images/indeed.png');\n}\n.xing {\n    background-image: url('https://assets.phenompeople.com/CareerConnectResources/pp/PHENA0059/en_us/desktop/assets/images/xing.png');\n}\n.dropbox {\n    background-image: url('https://assets.phenompeople.com/CareerConnectResources/q/ADCLUS/en_us/desktop/assets/images/dropbox_square.png');\n}\n.react-datepicker-wrapper {\n    width: 100%;\n}\n\n.job-title {\n    font-size: calc(.5em + 1.5vw);\n}\n\n/* following css are for tablet and mobile device (keep always at the end) */\n@media only screen and (max-width: 1024px) {\n\t.row {\n         padding: unset;\t\t\n\t}\n\t.form-group label {\n        display: block;\n        text-align: left;\n\t}\n    .error-detail {\n        padding-left: 16px;\n    }\n\t.acadmeia_info {\n\t\twidth: 100%;\n\t\ttext-align: center;\n\t}\n\tbutton[type=submit] {\n\t    margin-right: unset;\n    }\n}\n@media only screen and (max-width: 640px) {\n \t.errorHeader,\n        ul.errorList {\n\t  width: 100%;\n        } \n\t.cover-letter-files {\n\t margin: unset;\n\t white-space: unset;\n\t}\n\tbutton[type=submit] {\n\t    float: unset;\n\t    width: 100% !important;\n    }\n    /*Linked in total width in mideum devices*/\n    .cloud-options-group li.linkedin-option {\n        width: 100%;\n       }\n    .error-msg{\n        width: 100%;\n    }\n    .error-detail: {\n        padding-left: 0;\n    }\n}\n",
+      "cloudWidget": "\n    .resume-group {\n        padding: 20px;\n        width: 100%;\n    }\n    .resume-group .upload-resume-btn {\n        font-size: 16px !important;\n        background: var(--primary-color);\n        min-height: 39px;\n        margin-top: 6px;\n        padding: 0px 16px;\n        color: white;\n        text-decoration: underline;\n        cursor: pointer;\n        border: unset !important;\n        height:auto;\n    }\n    .resume-group .resume_info {\n        padding-left: 40px;\n        text-align: center;\n        font-size: 15px;\n        margin-bottom: 10px;\n        font-weight: 600;\n    }\n    .resume-group .cloud-options {\n        width: 100%\n    }\n    .resume-group .apply-or-box {\n        height: 32px;\n        min-width: 32px;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        border-radius: 16px;\n        font-size: 18px;\n        background-color: #eef3f6;\n        text-transform: lowercase;\n        color: #717171;\n    }\n    .resume-group .drives {\n        width: 100%;\n        display: flex;\n        gap: 20px;\n        align-items: end;\n    }\n    .resume-group .drives .apply-or-line {\n        display: flex;\n        align-items: center;\n    }\n    .resume-group .drives .resume-upload-wrapper {\n        display: flex;\n        align-items: center;\n    }\n    .resume-group .drives .resume-upload-wrapper:focus {\n        outline: none !important;\n    }\n    .resume-group .drives .awli-button {\n        display: flex;\n        flex-direction: column;\n        width: 175px;\n    }\n    .resume-group .drives li.linkedin-option {\n    margin-bottom: -10px;\n    }\n    .resume-group .drives .awli-button .awli-text {\n        line-height: 16px;\n        font-weight: 400;\n        color: rgba(0, 0, 0, 0.7);\n        font-size: 13px;\n        text-align: center;\n        margin-bottom: 0px;\n        padding: 2px;\n    }\n    .resume-group .drives .awli-button .awli-text span {\n        color: #000;\n    }\n    .resume-group .drives .awli-button .btn {\n        width: auto;\n        background-color: #0073b1;\n        padding: 9px 10px;\n        line-height: 20px;\n    }\n    .resume-group .drives .awli-button .btn span {\n        color: #fff !important;\n    }\n    .resume-group .drives .cloud-options-group {\n        text-align: right;\n        margin: 0 0;\n    }\n    .resume-group .drives .cloud-options-group ul {\n        display: flex;\n        align-items: end;\n        list-style: none;\n        gap: 20px;\n        margin-bottom: 0;\n        padding: 0;\n    }\n    @media only screen and (max-width: 640px) {\n        .resume-group .drives {\n            flex-wrap: wrap;\n        }\n        .resume-group .drives .cloud-options-group ul {\n            flex-wrap: wrap;\n            justify-content: center;\n        }\n    }\n    ",
+      "breadcrumb": "\n#breadcrumb-summary  {\n    min-height: 100px;\n}\n#breadcrumb-summary  .slick-slider {\n    position: relative;\n    display: block;\n    box-sizing: border-box;\n}\n\n#breadcrumb-summary  .slick-slider .slick-list {\n    position: relative;\n    display: block;\n    overflow: hidden;\n    margin: 0;\n    padding: 0;\n    transform: translate3d(0, 0, 0);\n    float: left;\n    width: 92%;\n    margin-left: 15px;\n}\n\n#breadcrumb-summary  .slick-slider .slick-list .slick-track {\n    position: relative;\n    top: 0;\n    left: -16px;\n    display: block;\n}\n\n#breadcrumb-summary  .slick-slider .slick-list .slick-track .slick-slide {\n    display: block;\n    position: relative;\n    float: left;\n    height: 100%;\n    min-height: 1px;\n    outline: none;\n    text-align: center;\n}\n\n #breadcrumb-summary  ul li {\n    cursor: default;\n}\n\n #breadcrumb-summary  ul li a {\n    width: 90px;\n    display: inline-block;\n    position: relative;\n    height: 70px;\n    text-align: center;\n    margin-top: 4px;\n    outline: 0;\n    padding: 0;\n}\n\n #breadcrumb-summary  ul li a .number {\n    background: #a9a9a9 !important;\n    border-radius: 50%;\n    border: 1px solid #a9a9a9 !important;\n    color: #a9a9a9 !important;\n    width: 15px;\n    height: 15px;\n    margin: 0 auto;\n    padding-top: 0;\n    vertical-align: middle;\n    font-size: 0;\n    z-index: 1;\n    position: relative;\n    box-shadow: 0 0 0 4px #a9a9a9, 0 0 0 5px #a9a9a9 !important;\n    z-index: 9999;\n    left: 0;\n    display: inline;\n}\n\n #breadcrumb-summary  .slick-list .slick-track li.progress-enable.progress-complete .number {\n    box-shadow: none !important;\n    font-size: 0;\n    padding: 10px;\n    border: none !important;\n    width: 0;\n    height: 0;\n    display: block;\n}\n\n  #breadcrumb-summary  .slick-list .slick-track li.progress-current .number,\n  #breadcrumb-summary  .slick-list .slick-track li.progress-enable .number {\n    background:var(--primary-color) !important;\n    color: var(--primary-color) !important;\n    box-shadow: 0 0 0 4px var(--primary-color), 0 0 0 5px var(--primary-color) !important;\n    border: 4px solid var(--primary-color) !important;\n}\n\n #breadcrumb-summary  ul li a .title {\n    font-size: 13px;\n    display: block;\n    overflow-wrap: break-word;\n    line-height: 1.3em;\n    padding-top: 15px;\n    color: var(--primary-color) !important;\n    cursor: pointer;\n}\n\n #breadcrumb-summary  ul li:last-child:before {\n    content: \"\";\n    position: absolute;\n    right: -16%;\n    background: none;\n    height: 20px;\n    z-index: 9;\n    top: 6px;\n}\n\n #breadcrumb-summary  ul li::after {\n    content: '';\n    width: 100%;\n    height: 3px;\n    background-color: #828282 !important;\n    position: absolute;\n    top: 15px;\n    height: 3px;\n    left: 51%;\n    z-index: 0;\n    transition: border-color 0.5s ease-in-out;\n}\n\n #breadcrumb-summary  .progress-current::after {\n    content: \"\";\n    background-color: #828282 !important;\n    left: 52%;\n}\n\n #breadcrumb-summary  .progress-enable.progress-complete:after {\n    content: '';\n    width: 100%;\n    height: 3px;\n    background-color: var(--primary-color) !important;\n    transition: border-color 0.5s ease-in-out;\n}\n\n #breadcrumb-summary  .slick-slide:last-child li.slide:last-child::before,\n #breadcrumb-summary  .slick-slide:last-child li.slide:last-child::after{\n    width: 0;\n}"
+    },
+    "recommendedTheme": {}
+  },
+  "common": {}
+}
